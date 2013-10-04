@@ -1,0 +1,11 @@
+<%= simple_form_for @rsvp, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= f.input :rolnr %>
+  <%= f.input :programme %>
+  <%= f.input :event_id %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                rsvps_path, :class => 'btn' %>
+  </div>
+<% end %>

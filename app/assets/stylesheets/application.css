@@ -11,5 +11,9 @@
  *= require_self
  *= require dataTables/jquery.dataTables.bootstrap
  *= require chosen
- *= require_tree .
+ *= require_directory .
  */
+body
+{
+	padding-top: 20px;
+}

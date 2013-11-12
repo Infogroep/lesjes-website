@@ -1,4 +1,5 @@
 class RsvpsController < ApplicationController
+	before_filter :login_required, except: [:index, :show, :new]
   before_action :set_rsvp, only: [:show, :edit, :update, :destroy]
 
   # GET /rsvps

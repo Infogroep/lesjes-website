@@ -14,24 +14,18 @@
 <table class="table table-striped datatable">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:date) %></th>
-      <th><%= model_class.human_attribute_name(:location) %></th>
-      <th><%= model_class.human_attribute_name(:host_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:host) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @events.each do |event| %>
       <tr>
+        <td><%= l event.date, format: :long %></td>
         <td><%= link_to event.name, event_path(event) %></td>
-        <td><%= event.description %></td>
-        <td><%= event.date %></td>
-        <td><%= event.location %></td>
         <td><%= event.host.name %></td>
-        <td><%=l event.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_event_path(event), :class => 'btn btn-mini' %>
